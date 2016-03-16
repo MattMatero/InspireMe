@@ -9,8 +9,8 @@ class LocationsController < ApplicationController
   def show
     @location = Location.new
     randomGen = Random.new
-    @location.lat = randomGen.rand(-200..200)
-    @location.lng = randomGen.rand(-200..200)
+    @location.lat = randomGen.rand(-150..150)
+    @location.lng = randomGen.rand(-150..150)
 
     respond_to do |format|
       format.json {render json: @location, notice: "Loading new Loc..."}

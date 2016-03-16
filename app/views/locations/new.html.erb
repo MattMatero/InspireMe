@@ -1,12 +1,14 @@
-<div style="width: 1200px; height: 500px;">
-  <h2 style="width: 200px; margin: 0 auto;">LOCATIONS</h2>
+<div class="map-container">
+  <h2 class="header" style="height: 25px; width: 200px;  margin: 0 auto; padding-bottom: 50px;">LOCATIONS</h2>
   <div id="map" style="height: 500px; width: 500px;  margin: 0 auto;">
     
   </div>
 </div>
 
 
-<div>
+<div style="height: 300px; width: 150px;  margin: 0 auto;">
   <button type="button" id="new-loc">New Loc!</button>
-  <button type="button" id="save-loc">Save Loc!</button>
+  <%if user_signed_in? %>
+    <button type="button" id="save-loc" class="btn btn-primary">Save Loc!</button>
+  <% end %>
 </div>
