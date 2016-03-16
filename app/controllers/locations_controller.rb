@@ -18,7 +18,6 @@ class LocationsController < ApplicationController
   end
 
   def create
-    p params
     locParams = params[:location]
     @location = Location.new
     @location.lat = locParams[:lat].to_i 
@@ -31,6 +30,17 @@ class LocationsController < ApplicationController
       else
         format.json {render json: @location.errors, status: :unprocessable_entity}
       end
+    end
+  end
+
+  def destroy
+    @location = Location.find(params[:id])
+    @location.destroy
+    session[:return_to] ||= request.referer
+
+    respond_to do |format|
+      format.html{redirect_to session.delete(:return_to), notice: 'Location successfully removed'}
+      format.json{head :no_content}
     end
   end
 

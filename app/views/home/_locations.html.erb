@@ -8,6 +8,7 @@
   <tr>
     <td><%= loc.lat%></td>
     <td><%= loc.lng%></td>
+    <td><%= link_to 'Remove', location_path(loc), :method => 'delete' %></td>
   </tr>
   <% end %> 
   </table>
