@@ -1,0 +1,7 @@
+<div class="landing-container">
+	<% if user_signed_in? && !@saved_locations.nil? %>
+    <%= render 'locations' %>
+  <% else %>
+    <%= render 'welcome' %>
+  <% end %>
+</div>

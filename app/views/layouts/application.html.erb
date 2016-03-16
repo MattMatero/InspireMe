@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AidinProject</title>
+  <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoXoi4GFcOCDtGnDn_ahRjGT6YpgQxauM&callback=initMap">
+   </script>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= render 'layouts/header' %>
+
+<div class="container">
+  <div id="flash">
+    <% flash.each do |name,msg| %>
+    <a class="close" data-dismiss="alert">&#215;</a>
+    <%= content_tag(:div, msg, class:"alert alert-info")%>
+    <% end %>
+  </div> 
+</div>
+<%= yield %>
+
+</body>
+</html>
