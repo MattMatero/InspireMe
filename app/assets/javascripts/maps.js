@@ -35,7 +35,6 @@ $(document).on('click','#save-loc', function(){
     url: "/locations",
     data: {location: {lat: loc.globalLat, lng: loc.globalLng}},
     success: function(data){
-      alert(data.id)
       return false;
     },
     error: function(data){
