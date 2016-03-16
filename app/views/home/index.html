@@ -1,5 +1,5 @@
 <div class="landing-container">
-	<% if user_signed_in? && !@saved_locations.nil? %>
+	<% if user_signed_in? && (!@saved_locations.nil? && @saved_locations.size > 0) %>
     <%= render 'locations' %>
   <% else %>
     <%= render 'welcome' %>
